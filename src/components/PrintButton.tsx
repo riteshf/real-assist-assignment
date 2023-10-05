@@ -8,10 +8,12 @@ type Props = {
 
 const PrintButton = ({ handleClick = () => {} }: Props) => {
   return (
-    <Button color="dark" className="text-white" onClick={handleClick}>
-      <BsPrinter className="mr-2 h-5 w-5" alt="printn" />
-      Print
-    </Button>
+    <div className="w-screen h-screen m-auto flex justify-center items-center bg-white">
+      <Button color="dark" className="text-white h-10" onClick={handleClick}>
+        <BsPrinter className="mr-2 h-5 w-5" alt="printn" />
+        Print
+      </Button>
+    </div>
   );
 };
 

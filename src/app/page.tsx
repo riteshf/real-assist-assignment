@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
+import { usePDF } from "react-to-pdf";
 import { Spinner } from "flowbite-react";
 import PrintButton from "@/components/PrintButton";
 import CrimeReport from "@/components/CrimeReport";
 import { CRIME_API_ENDPOINT, CRIME_API_KEY } from "@/config/env.config";
-import { usePDF } from "react-to-pdf";
 
 export default function Page() {
   const [loading, setLoading] = useState(false);
@@ -31,13 +31,20 @@ export default function Page() {
     getCrimeReport();
   }, []);
 
-  if (error || loading) return <Spinner />;
+  if (error || loading)
+    return (
+      <div className="container mx-auto">
+        <div className="flex justify-center items-center">
+          <Spinner />
+        </div>
+      </div>
+    );
   return (
     <div className="container mx-auto">
-      <div className="block">
+      <div className="flex">
         <PrintButton handleClick={toPDF} />
       </div>
-      <div className="block">
+      <div className="hide">
         <div ref={targetRef}>
           <CrimeReport data={data} />
         </div>

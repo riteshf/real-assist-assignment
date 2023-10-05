@@ -32,10 +32,8 @@ const DummyCard = ({ height = "md" }: Props) => {
           <div className="h-2 bg-gray-200 rounded-full mb-2.5"></div>
           <span className="sr-only">Loading...</span>
         </div>
-        <Button className="w-[250px] flex absolute top-[40%] left-[40%] rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500">
-          <span className="text-center justify-center  my-auto">
-            Only Focus on Crime Graph
-          </span>
+        <Button className="w-[250px] min-h-[30px] leading-6 text-xl absolute top-[40%] left-[40%] rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500">
+          Only Focus on Crime Graph
         </Button>
       </div>
     </section>
